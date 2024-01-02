@@ -110,5 +110,5 @@ Then('copyright text is visible in footer', async ({ cartPage }) => {
 
 Then('the copyright text contents are correct', async ({ cartPage }) => {
     const textContent = await cartPage.footer.getCopyrightTextContent();
-    expect(textContent).toEqual('© 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy');
+    expect(textContent).toEqual('© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy');
 });
