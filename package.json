@@ -17,6 +17,6 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.10.5",
-    "playwright-bdd": "^5.6.0"
+    "playwright-bdd": "^6.6.0"
   }
 }

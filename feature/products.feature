@@ -28,7 +28,7 @@ Feature: Products
 
     Examples: 
       | Social Media | URL |
-      | Twitter      | https://twitter.com/saucelabs |
+      | Twitter      | https://x.com/saucelabs |
       | Facebook     | https://www.facebook.com/saucelabs |
       | LinkedIn     | https://www.linkedin.com/company/sauce-labs |
 
