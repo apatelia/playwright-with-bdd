@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { defineBddConfig } from 'playwright-bdd';
+import { cucumberReporter, defineBddConfig } from 'playwright-bdd';
 
 const testDir = defineBddConfig({
     features: 'feature/*.feature',
@@ -23,7 +23,11 @@ export default defineConfig({
     workers: process.env.CI ? 1 : undefined,
 
     // Reporter to use
-    reporter: 'html',
+    reporter: [
+        [ 'html' ],
+        cucumberReporter('html', { outputFile: 'cucumber-report/report.html' }),
+    ],
+
 
     use: {
         // Base URL to use in actions like `await page.goto('/')`.
