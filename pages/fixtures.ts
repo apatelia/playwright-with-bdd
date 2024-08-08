@@ -1,4 +1,4 @@
-import { test as base } from 'playwright-bdd';
+import { test as base, createBdd } from 'playwright-bdd';
 import { LoginPage } from '../pages/login-page';
 import { ProductsPage } from '../pages/products-page';
 import { CartPage } from './cart-page';
@@ -14,3 +14,5 @@ export const test = base.extend<MyFixtures>({
     productsPage: async ({ page }, use) => use(new ProductsPage(page)),
     cartPage: async ({ page }, use) => use(new CartPage(page)),
 });
+
+export const { Given, When, Then } = createBdd(test);

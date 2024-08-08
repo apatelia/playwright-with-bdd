@@ -1,8 +1,5 @@
 import { expect } from "@playwright/test";
-import { createBdd } from 'playwright-bdd';
-import { test } from '../pages/fixtures';
-
-const { Given, When, Then } = createBdd(test);
+import { Given, Then, When } from '../pages/fixtures';
 
 Given('the User is on login page', async ({ loginPage }) => {
     await loginPage.goto();

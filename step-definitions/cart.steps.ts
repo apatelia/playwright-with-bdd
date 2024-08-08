@@ -1,8 +1,6 @@
 import { expect } from "@playwright/test";
-import { createBdd } from 'playwright-bdd';
-import { test } from '../pages/fixtures';
+import { Given, Then, When } from '../pages/fixtures';
 
-const { Given, When, Then } = createBdd(test);
 
 Given('the user has added {string} to the cart', async ({ page, loginPage, productsPage }, productName: string) => {
     await loginPage.goto();
