@@ -1,7 +1,7 @@
 node_modules/
 /test-results/
 /playwright-report/
-/cucumber-report/
+/reports/
 /playwright/.cache/
 
 # Playwright Tests generated from feature files.
