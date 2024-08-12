@@ -26,7 +26,7 @@ Feature: User Login
       | invalid_username | invalid_password |
 
   @locked_out_user
-  Scenario: Loocked out user must not be able to login with valid login credentials
+  Scenario: Locked out user must not be able to login with valid login credentials
     Given the User is on login page
     When the User tries to login with "locked_out_user" as username and "secret_sauce" as password
     Then the User should see a locked out error message
