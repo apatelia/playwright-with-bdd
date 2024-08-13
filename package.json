@@ -14,8 +14,9 @@
     "bdd"
   ],
   "author": "Arpan Patelia",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@playwright/test": "^1.46.0",
     "@types/node": "^20.10.5",
     "playwright-bdd": "^7.0.1"
   }
