@@ -1,4 +1,4 @@
-import { expect } from "@playwright/test";
+import { expect } from '@playwright/test';
 import { Given, Then, When } from '../pages/fixtures';
 
 Given('the user is logged in and on Products page', async ({ page, loginPage, productsPage }) => {
@@ -69,7 +69,7 @@ When('the user clicks {string} link from footer, it should open correct {string}
     const newPage = await newPagePromise;
     await newPage.waitForLoadState();
 
-    const regexPattern = ".*" + url + ".*";
+    const regexPattern = `.*${url}.*`;
     const regex = new RegExp(regexPattern);
     await expect(newPage).toHaveURL(regex);
 });

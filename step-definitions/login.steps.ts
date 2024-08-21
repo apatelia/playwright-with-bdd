@@ -1,4 +1,4 @@
-import { expect } from "@playwright/test";
+import { expect } from '@playwright/test';
 import { Given, Then, When } from '../pages/fixtures';
 
 Given('the User is on login page', async ({ loginPage }) => {

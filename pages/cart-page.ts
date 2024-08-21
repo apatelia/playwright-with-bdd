@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import { Header } from './header';
-import { Footer } from './footer'
+import { Footer } from './footer';
 
 export class CartPage {
     readonly page: Page;
@@ -42,17 +42,15 @@ export class CartPage {
 
     async getProductPrice(productName: string) : Promise<string> {
         const product: Locator = this.allProductsInCart.filter({ hasText: productName });
-        
-        const price = await product.locator('div.inventory_item_price').textContent();
 
-        return price!;
+        return `${await product.locator('div.inventory_item_price').textContent()}`;
     }
 
     async getProductQuantity(productName: string) : Promise<number> {
         const product: Locator = this.allProductsInCart.filter({ hasText: productName });
 
-        const quantity = await product.locator('div.cart_quantity').textContent();
+        const quantity = `${await product.locator('div.cart_quantity').textContent()}`;
 
-        return +quantity!;
+        return (quantity === '') ? 0 : +quantity;
     }
 }

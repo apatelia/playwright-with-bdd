@@ -1,4 +1,4 @@
-import { expect } from "@playwright/test";
+import { expect } from '@playwright/test';
 import { Given, Then, When } from '../pages/fixtures';
 
 
@@ -97,7 +97,7 @@ When('the user clicks {string} link from footer, correct {string} is opened in a
     const newPage = await newPagePromise;
     await newPage.waitForLoadState();
 
-    const regexPattern = ".*" + url + ".*";
+    const regexPattern = `.*${url}.*`;
     const regex = new RegExp(regexPattern);
     await expect(newPage).toHaveURL(regex);
 });

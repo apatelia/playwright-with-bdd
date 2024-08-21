@@ -33,8 +33,8 @@ export class Header {
     }
 
     async getCartItemCount(): Promise<number> {
-        const itemCount = await this.cartItemCount.textContent();
+        const itemCount = `${await this.cartItemCount.textContent()}`;
 
-        return +itemCount!;
+        return (itemCount === '') ? 0 : +itemCount;
     }
 }
