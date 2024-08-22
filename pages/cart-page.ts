@@ -1,24 +1,18 @@
 import { Locator, Page } from '@playwright/test';
-import { Header } from './header';
-import { Footer } from './footer';
 
 export class CartPage {
     readonly page: Page;
-    readonly header: Header;
     readonly cartHeading: Locator;
     readonly allProductsInCart: Locator;
     readonly continueShoppingButton: Locator;
     readonly checkoutButton: Locator;
-    readonly footer: Footer;
 
     constructor(page: Page) {
         this.page = page;
-        this.header = new Header(page);
         this.cartHeading = page.getByText('Your Cart');
         this.allProductsInCart = page.locator('div.cart_item');
         this.continueShoppingButton = page.getByRole('button', { name: 'Go back CONTINUE SHOPPING' });
         this.checkoutButton = page.getByRole('button', { name: 'CHECKOUT' });
-        this.footer = new Footer(page);
     }
 
     async goto() : Promise<void> {

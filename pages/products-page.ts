@@ -1,22 +1,16 @@
 import { Locator, Page } from '@playwright/test';
-import { Footer } from './footer';
-import { Header } from './header';
 
 export class ProductsPage {
     readonly page: Page;
-    readonly header: Header;
     readonly productHeading: Locator;
     readonly allProducts: Locator;
     readonly productSortOptions: Locator;
-    readonly footer: Footer;
 
     constructor(page: Page) {
         this.page = page;
-        this.header = new Header(page);
         this.productHeading = page.getByText('Products');
         this.allProducts = page.locator('div.inventory_item');
         this.productSortOptions = page.locator('select.product_sort_container');
-        this.footer = new Footer(page);
     }
 
     async goto(): Promise<void> {

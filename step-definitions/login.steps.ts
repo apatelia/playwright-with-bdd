@@ -9,12 +9,6 @@ When('the User tries to login with {string} as username and {string} as password
     await loginPage.doLogin(username, password);
 });
 
-Then('the User should be on Products page', async ({ page, productsPage }) => {
-    await expect(page).toHaveURL(/.*inventory.html/);
-
-    await expect(productsPage.productHeading).toBeVisible();
-});
-
 Then('the User should see a locked out error message', async ({ loginPage }) => {
     await expect(loginPage.errorMessage).toBeVisible();
 

@@ -7,7 +7,8 @@
     "test": "npx bddgen && npx playwright test",
     "tagged-test": "npx bddgen && npx playwright test --grep ",
     "not-tagged-test": "npx bddgen && npx playwright test --grep-invert ",
-    "report": "npx playwright show-report"
+    "report": "npx playwright show-report reports/cucumber",
+    "report:debug": "npx playwright show-report reports/playwright"
   },
   "keywords": [
     "playwright",
