@@ -1,4 +1,4 @@
-import { expect } from "@playwright/test";
+import { expect } from '@playwright/test';
 import { Given, Then, When } from '../pages/fixtures';
 
 Given('the User is on login page', async ({ loginPage }) => {
@@ -7,12 +7,6 @@ Given('the User is on login page', async ({ loginPage }) => {
 
 When('the User tries to login with {string} as username and {string} as password', async ({ loginPage }, username: string, password: string,) => {
     await loginPage.doLogin(username, password);
-});
-
-Then('the User should be on Products page', async ({ page, productsPage }) => {
-    await expect(page).toHaveURL(/.*inventory.html/);
-
-    await expect(productsPage.productHeading).toBeVisible();
 });
 
 Then('the User should see a locked out error message', async ({ loginPage }) => {

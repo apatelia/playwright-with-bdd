@@ -28,7 +28,6 @@ export class Footer {
     }
 
     async getCopyrightTextContent() : Promise<string> {
-        const text = await this.copyrightText.textContent();
-        return text!;
+        return `${await this.copyrightText.textContent()}`;
     }
 }
