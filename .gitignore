@@ -3,6 +3,7 @@ node_modules/
 /playwright-report/
 /reports/
 /playwright/.cache/
+/logs/
 
 # Playwright Tests generated from feature files.
 /.features-gen/feature/

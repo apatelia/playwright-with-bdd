@@ -24,7 +24,8 @@ export default defineConfig({
 
     // Reporter to use
     reporter: [
-        [ 'html', { outputFolder: 'reports/playwright' } ],
+        ['./utils/CustomReporter.ts'],
+        [ 'html', { outputFolder: 'reports/playwright/' } ],
         cucumberReporter('html', { outputFile: 'reports/cucumber/index.html' }),
     ],
 
