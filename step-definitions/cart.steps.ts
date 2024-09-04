@@ -15,7 +15,7 @@ Then('quantity of the {string} in cart must match {int}', async ({ cartPage }, p
     expect(await cartPage.getProductQuantity(productName)).toEqual(productQuantity);
 });
 
-Then('the user removes {string} from the cart', async ({ cartPage }, productName: string) => {
+When('the user removes {string} from the cart', async ({ cartPage }, productName: string) => {
     await cartPage.removeProductFromCart(productName);
 });
 

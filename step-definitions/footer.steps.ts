@@ -1,7 +1,9 @@
-import { expect } from '@playwright/test';
-import { Then, When } from '../pages/fixtures';
+import { expect, Page } from '@playwright/test';
+import { Given, Then, When } from '../pages/fixtures';
 
-Then('{string} link in footer should be visible', async ({ footer }, link: string) => {
+let newPage: Page;
+
+Given('that {string} link in footer is visible', async ({ footer }, link: string) => {
     switch (link) {
         case 'Twitter/X':
             await expect(footer.twitterLink).toBeEnabled();
@@ -17,7 +19,7 @@ Then('{string} link in footer should be visible', async ({ footer }, link: strin
     }
 });
 
-When('the user clicks {string} link from footer, it should open correct {string} in a new tab', async ({ page, footer }, socialMedia: string, url: string) => {
+When('the user clicks {string} link from footer', async ({ page, footer }, socialMedia: string) => {
     const newPagePromise = page.context().waitForEvent('page');
 
     switch (socialMedia) {
@@ -34,9 +36,11 @@ When('the user clicks {string} link from footer, it should open correct {string}
             break;
     }
 
-    const newPage = await newPagePromise;
+    newPage = await newPagePromise;
     await newPage.waitForLoadState();
+});
 
+Then('it should open correct {string} in a new tab', async ({ page }, url: string) => {
     const regexPattern = `.*${url}.*`;
     const regex = new RegExp(regexPattern);
     await expect(newPage).toHaveURL(regex);

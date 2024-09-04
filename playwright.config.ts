@@ -3,7 +3,7 @@ import { cucumberReporter, defineBddConfig } from 'playwright-bdd';
 
 const testDir = defineBddConfig({
     features: 'feature/*.feature',
-    steps: ['step-definitions/**/*.ts', './pages/fixtures.ts']
+    steps: [ 'step-definitions/**/*.ts', './pages/fixtures.ts' ]
 });
 
 export default defineConfig({
@@ -24,7 +24,7 @@ export default defineConfig({
 
     // Reporter to use
     reporter: [
-        ['./utils/CustomReporter.ts'],
+        [ './utils/CustomReporter.ts' ],
         [ 'html', { outputFolder: 'reports/playwright/' } ],
         cucumberReporter('html', { outputFile: 'reports/cucumber/index.html' }),
     ],
@@ -45,7 +45,7 @@ export default defineConfig({
     projects: [
         {
             name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
+            use: { ...devices[ 'Desktop Chrome' ] },
         },
         // {
         //     name: 'firefox',

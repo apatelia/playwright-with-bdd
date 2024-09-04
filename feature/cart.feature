@@ -15,7 +15,7 @@ Feature: Cart
 
     @remove_from_cart
     Scenario: Test removal of a product from the cart
-        Then the user removes "Sauce Labs Backpack" from the cart
+        When the user removes "Sauce Labs Backpack" from the cart
         Then the item count badge must not be displayed on cart icon in header
 
     @continue_shopping
@@ -35,8 +35,9 @@ Feature: Cart
 
     @cart_footer @social_media_links
     Scenario Outline: Test Social Media links in footer
-        Then "<Social Media>" link in footer should be visible
-        When the user clicks "<Social Media>" link from footer, it should open correct "<URL>" in a new tab
+        Given that "<Social Media>" link in footer is visible
+        When the user clicks "<Social Media>" link from footer
+        Then it should open correct "<URL>" in a new tab
 
         # title-format: <Social Media> link in footer should work
         Examples:

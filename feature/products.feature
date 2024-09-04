@@ -24,8 +24,9 @@ Feature: Products
 
     @footer @social_media_links
     Scenario Outline: Test Social Media links in footer
-        Then "<Social Media>" link in footer should be visible
-        When the user clicks "<Social Media>" link from footer, it should open correct "<URL>" in a new tab
+        Given that "<Social Media>" link in footer is visible
+        When the user clicks "<Social Media>" link from footer
+        Then it should open correct "<URL>" in a new tab
 
         # title-format: <Social Media> link in footer should work
         Examples:
