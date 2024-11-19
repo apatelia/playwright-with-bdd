@@ -1,25 +1,25 @@
 {
-  "name": "playwright-with-bdd",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "npx bddgen && npx playwright test",
-    "tagged-test": "npx bddgen && npx playwright test --grep ",
-    "not-tagged-test": "npx bddgen && npx playwright test --grep-invert ",
-    "report": "npx playwright show-report reports/cucumber",
-    "report:debug": "npx playwright show-report reports/playwright"
-  },
-  "keywords": [
-    "playwright",
-    "bdd"
-  ],
-  "author": "Arpan Patelia",
-  "license": "MIT",
-  "devDependencies": {
-    "@playwright/test": "^1.46.1",
-    "@types/node": "^22.5.3",
-    "playwright-bdd": "^7.2.2",
-    "winston": "^3.14.2"
-  }
+    "name": "playwright-with-bdd",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "npx bddgen && npx playwright test",
+        "tagged-test": "npx bddgen && npx playwright test --grep ",
+        "not-tagged-test": "npx bddgen && npx playwright test --grep-invert ",
+        "report": "npx playwright show-report reports/cucumber",
+        "report:debug": "npx playwright show-report reports/playwright"
+    },
+    "keywords": [
+        "playwright",
+        "bdd"
+    ],
+    "author": "Arpan Patelia",
+    "license": "MIT",
+    "devDependencies": {
+        "@playwright/test": "^1.49.0",
+        "@types/node": "^22.9.0",
+        "playwright-bdd": "^7.5.0",
+        "winston": "^3.17.0"
+    }
 }
