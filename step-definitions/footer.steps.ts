@@ -40,7 +40,7 @@ When('the user clicks {string} link from footer', async ({ page, footer }, socia
     await newPage.waitForLoadState();
 });
 
-Then('it should open correct {string} in a new tab', async ({ page }, url: string) => {
+Then('it should open correct {string} in a new tab', async ({ }, url: string) => {
     const regexPattern = `.*${url}.*`;
     const regex = new RegExp(regexPattern);
     await expect(newPage).toHaveURL(regex);
@@ -52,5 +52,7 @@ Then('copyright text in footer should be visible', async ({ footer }) => {
 
 Then('the copyright text contents should be correct', async ({ footer }) => {
     const textContent = await footer.getCopyrightTextContent();
-    expect(textContent).toEqual('© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy');
+
+    const currentYear = new Date().getFullYear();
+    expect(textContent).toEqual(`© ${currentYear} Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy`);
 });
