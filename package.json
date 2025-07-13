@@ -17,9 +17,9 @@
     "author": "Arpan Patelia",
     "license": "MIT",
     "devDependencies": {
-        "@playwright/test": "^1.49.0",
-        "@types/node": "^22.10.5",
-        "playwright-bdd": "^8.0.1",
+        "@playwright/test": "^1.54.1",
+        "@types/node": "^24.0.13",
+        "playwright-bdd": "^8.3.1",
         "winston": "^3.17.0"
     }
 }
